@@ -1,0 +1,40 @@
+.proje{
+    height: 50.4vh;
+    width: 46vh;
+    background-color: #F9FBFD;
+    border: 2px solid rgb(222, 222, 228);
+    border-radius: 9px;
+    border-top: none;
+    border-bottom: none;
+   
+}
+.foot{
+    height: 0.5vh;
+    position: absolute;
+    width: 45.7vh;
+    background-color: #029ddd;
+    margin-top: -0.1%;
+    border-radius: 9px;
+    border-top: none;
+}
+.inputs{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.bat{
+    margin-top: -4%;
+    position: absolute;
+    margin-left: 10%;
+    border: 1px solid transparent;
+    background: #0193DC;
+    border-radius: 4px;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    width: 120px;
+    height: 40px;
+    
+    
+
+}

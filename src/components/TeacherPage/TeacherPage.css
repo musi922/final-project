@@ -1,0 +1,716 @@
+.teacher-hello{
+    position: absolute;
+width: 275px;
+height: 74px;
+left: 30px;
+top: 121px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 27px;
+/* display: flex; */
+align-items: center;
+
+color: #FFFFFF;
+
+}
+
+body {
+    font-family: 'Georgia', serif;
+  }
+.teacher-name{
+    position: absolute;
+width: 610px;
+height: 94px;
+left: 30px;
+top: 170px;
+
+font-family: 'Georgia';
+font-style: normal;
+font-weight: 800;
+font-size: 45px;
+line-height: 30px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+}
+.teacher-descr{
+    position: absolute;
+width: 610px;
+height: 59px;
+left: 30px;
+top: 250px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+}
+.teacher-button{
+    position: absolute;
+width: 231px;
+height: 66px;
+left: 50px;
+top: 340px;
+background: none;
+color:white;
+font-size:large;
+
+border: 1px solid #0193DC;
+border-radius: 15px;
+}
+.teacher-button:hover{
+background: #0193DC;
+}
+.teacher-photo{
+width: 421px;
+height: 371px;
+left: 628px;
+top: 125px;
+
+background: url("../../assets/image/recourses/bb.jpg");
+/* filter: drop-shadow(48px 4px 4px rgba(0, 0, 0, 0.25)); */
+border-radius: 20px;
+}
+.teacher-photo_contaner{
+    width: 421px;
+    height: 371px;
+    left: 628px;
+    margin-left:628px ;
+    background: #FFFFFF;
+    margin-top: 5px;
+}
+.about-me{
+    position: absolute;
+width: 264px;
+height: 62px;
+left: 600px;
+top: 542px;
+
+/* font-family: 'Poppins'; */
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+}
+.lne{
+    position: absolute;
+width: 90px;
+height: 5px;
+left: 615px;
+top: 586px;
+
+background: #9DD7F2;
+}
+.teacher-photo1{
+    
+position: absolute;
+width: 400px;
+height: 350px;
+left: 95px;
+top: 610px;
+background: url('../imagee/recourses/bb.jpg');
+object-fit:contain;
+background-repeat: "no-repeat";
+border-radius: 20px;
+filter: drop-shadow(48px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.who-am{
+    position: absolute;
+width: 375px;
+height: 67px;
+left: 806px;
+top: 624px;
+
+/* font-family: 'Poppins'; */
+font-style: normal;
+font-weight: 500;
+font-size: 29px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+.who-dtals{
+    position: absolute;
+width: 654.27px;
+height: 267px;
+left: 602px;
+top: 636px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150.38%;
+/* or 20px */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.03em;
+
+color: #2B2B36;
+}
+.my-sll{
+    position: absolute;
+width: 264px;
+height: 62px;
+left: 600px;
+top: 1036px;
+
+/* font-family: 'Poppins'; */
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+.lne-1{
+    position: absolute;
+    width: 90px;
+    height: 5px;
+    left: 613px;
+    top: 1082px;
+    
+    background: #9DD7F2;
+}
+.teacher-skill_t{
+    position: absolute;
+width: 582px;
+height: 67px;
+left: 180px;
+top: 1150px;
+
+/* font-family: 'Poppins'; */
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #373F41;
+
+}
+.maths{
+    position: absolute;
+width: 173px;
+height: 64px;
+left: 780px;
+top: 1140px;
+
+font-family: 'Roboto Slab';
+font-style: normal;
+font-weight: 500;
+font-size: 17px;
+line-height: 150.38%;
+/* or 21px */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.03em;
+
+color: #4B6163;
+}
+.bar{
+    position: absolute;
+width: 544px;
+height: 9px;
+left: 780px;
+top: 1197px;
+
+background: #d4B;
+
+}
+.bar-line{
+ position:absolute;
+    width: 50%;
+    background: #0193DC;
+    top: 1197;
+}
+.Skill-decr{
+    position: absolute;
+width: 625px;
+height: 322px;
+left: 79px;
+top: 1154px;
+
+/* font-family: 'Poppins'; */
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 36px;
+/* or 277% */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.01em;
+
+color: #373F41;
+
+}
+
+.Archievements{
+    position: absolute;
+width: 264px;
+height: 62px;
+left: 600px;
+top: 1536px;
+
+/* font-family: 'Poppins'; */
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+.Archievements-ln{
+    position: absolute;
+    width: 160px;
+    height: 5px;
+    left: 613px;
+    top: 1582px;
+    
+    background: #9DD7F2;
+}
+.Archievements-photo_1{
+    position: absolute;
+width: 225px;
+height: 374px;
+left: 357px;
+top: 1642px;
+
+
+background: url('../imagee/recourses/black-excellence-day.jpg');
+transition: 0.3s all ease-in-out;
+background-size:cover;
+background-position: center;
+
+}
+.Archievements-photo_1:hover{
+transform: scale(1.2);
+z-index: 3;
+}
+.Archievements-photo_2{
+    position: absolute;
+width: 225px;
+height: 298px;
+left: 606px;
+top: 1642px;
+
+background: url('../imagee/recourses/Unknown-8-rotated.jpeg');
+background-size:cover;
+background-position: center;
+transition: 0.3s all ease-in-out;
+}
+.Archievements-photo_2:hover{
+    transform: scale(1.2);
+    z-index: 4;
+    }
+.Archievements-photo_3{
+    position: absolute;
+width: 225px;
+height: 211px;
+left: 856px;
+top: 1642px;
+
+background: url('../imagee/recourses/Issa-Rae-BHM-1-768x768.jpg');
+background-size:cover;
+background-position: center;
+transition: 0.3s all ease-in-out;
+}
+.Archievements-photo_3:hover{
+    transform: scale(1.2);
+    z-index: 3;
+    }
+.Archievements-photo_4{
+
+    position: absolute;
+    width: 225px;
+    height: 247px;
+    left: 357px;
+    top: 2040px;
+   
+    background: url('../imagee/recourses/black-excellence-meaning-quotes-1657119636.jpg');
+    background-size:cover;
+    background-position: center;
+    transition: 0.3s all ease-in-out;
+}
+.Archievements-photo_4:hover{
+    transform: scale(1.2);
+    z-index: 3;
+    }
+.Archievements-photo_5{
+    position: absolute;
+width: 225px;
+height: 322px;
+left: 606px;
+top: 1961px;
+
+background: url('../imagee/recourses/Black\ Excellence\ Celebration.webp');
+background-size: cover;
+background-position: center;
+
+transition: 0.3s all ease-in-out;
+}
+.Archievements-photo_5:hover{
+    transform: scale(1.2);
+    z-index: 3;
+    }
+.Archievements-photo_6{
+    position: absolute;
+width: 225px;
+height: 412px;
+left: 856px;
+top: 1875px;
+
+background: url('../imagee/recourses/Poster-2.jpg');
+background-size: cover;
+background-position: center;
+
+transition: 0.3s all ease-in-out;
+}
+.Archievements-photo_6:hover{
+    transform: scale(1.2);
+    z-index: 3;
+    }
+.contact-me{
+    position: absolute;
+    width: 264px;
+    height: 62px;
+    left: 600px;
+    top: 2322px;
+    
+    /* font-family: 'Poppins'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #000000;
+}
+.contact-line{
+    position: absolute;
+    width: 112px;
+    height: 5px;
+    left: 613px;
+    top: 2367px;
+    
+    background: #9DD7F2;}
+    .massage-title{
+
+        position: absolute;
+width: 240px;
+height: 72px;
+left: 220px;
+top: 2387px;
+
+/* font-family: 'Poppins'; */
+font-style: normal;
+font-weight: 700;
+justify-content: center;
+font-size: 23px;
+line-height: 27px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+    }
+    .input-name{
+        
+position: absolute;
+width: 238px;
+height: 57px;
+left: 100px;
+top: 2449px;
+
+background: #B8B8B8;
+border-radius: 10px;
+border: none;
+padding-left: 30px;
+    }
+    .input-name:focus{
+        outline: none;
+    }
+.input-email{
+    position: absolute;
+    width: 254px;
+height: 57px;
+left: 359px;
+top: 2449px;
+padding-left: 30px;
+background: #B8B8B8;
+border-radius: 10px;
+border: none;
+}
+.input-email:focus{
+    outline: none;
+
+}
+.input-subject{
+    position: absolute;
+width: 514px;
+height: 57px;
+left: 100px;
+top: 2523px;
+
+background: #B8B8B8;
+border-radius: 10px;
+padding-left: 30px;
+border: none;
+}
+.input-subject:focus{
+    outline: none;
+
+}
+
+.input-message{
+    position: absolute;
+width: 514px;
+height: 167px;
+left: 100px;
+top: 2602px;
+
+background: #B8B8B8;
+border-radius: 10px;
+border: none;
+padding-left: 30px;
+padding-right: 20px;
+padding-top: 10px;
+}
+.input-message:focus{
+    outline: none;
+}
+.contact-button{
+    position: absolute;
+    top: 2792px;
+    border: none;
+    border-radius: 5px;
+    background:#0193DC;
+    color: white;
+    width: 80px;
+    height: 35px;
+    left: 300px;
+    transition: 0.3s all ease-in-out;
+
+}
+.contact-button:hover{
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.get-in-touch{
+    top: 2389px;
+    position: absolute;
+width: 240px;
+height: 72px;
+left: 871px;
+  /* top: 2314px; */
+
+/* font-family: 'Poppins'; */
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #0F0E0E;
+
+}
+.get-in-touch_description{
+    position: absolute;
+width: 601px;
+height: 160px;
+left: 750px;
+top: 2432px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 23px;
+display: flex;
+align-items: center;
+
+color: #2B2B36;
+}
+.person-icon{
+    position: absolute;
+width: 39px;
+height: 33px;
+left: 844px;
+top: 2586px;
+
+}
+.location-icon{
+    
+position: absolute;
+width: 39px;
+height: 33px;
+left: 844px;
+top: 2639px;
+}
+.atsign-icon{
+    position: absolute;
+width: 39px;
+height: 33px;
+left: 844px;
+top: 2700px;
+}
+.teacher-nam{
+    position: absolute;
+width: 246px;
+height: 45px;
+left: 895px;
+top: 2584px;
+
+font-family: 'Roboto Slab';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 18px;
+display: flex;
+align-items: center;
+
+color: #30393B;
+
+}
+.location{
+    position: absolute;
+    width: 246px;
+    height: 45px;
+    left: 895px;
+    top: 2636px;
+    
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    
+    color: #30393B;
+}
+.email-teacher{
+    position: absolute;
+    width: 246px;
+    height: 45px;
+    left: 895px;
+    top: 2692px;
+    
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    
+    color: #30393B;
+}
+@media screen  and (max-width: 550px) {
+    .teacher-name{
+        font-size: 29px;
+        left: 25px;
+        top: 170px;
+
+    }
+    .teacher-hello{
+        font-size: 24px;
+        top: 156px;
+    }
+    .teacher-button{
+        width: 139px;
+        height: 50px;
+        left: 25px;
+    }
+    .teacher-photo1{
+        display: none;
+    }
+    .about-me{
+        top:600px;
+        left: 120px;
+    }
+    .pc{
+        height: 300px;
+
+    }
+    .lne{
+        left: 127px;
+        top: 646px;
+    }
+    .who-am{
+        left: 100px;
+        top: 660px;
+        font-size: 27px;
+    }
+    .who-dtals{
+        left: 2px;
+        width: 100%;
+        top: 720px;
+        align-items: normal;
+        justify-content: left;
+        font-size: 19px;
+        height: 100%;
+        font-weight: 300;
+
+    }
+    .my-sll{
+        left: 120px;
+        top: 970px;
+    }
+    .lne-1{
+        left: 129px;
+        top: 1015px;
+    }
+    .teacher-skill_t{
+        left: 20px;
+        top:1030px ;
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .Skill-decr{
+        left: 7px;
+        top: 1110px;
+        width: 380px;
+        font-size: 19px;
+        align-content: center;
+        line-height: 45.2px;
+        
+    }
+}

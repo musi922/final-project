@@ -1,0 +1,306 @@
+.top{
+    margin-left: 12%;
+    position: absolute;
+    height: 380px;
+    width: 80%;
+    background-color: rgba(0, 0, 255, 0.3);
+    top: 220px;
+    border-radius: 8px;
+}
+.box-text{
+    background: white;
+    position: absolute;
+    width: 460px;
+    height: 300px;
+    left: 150px;
+    top: 30px;
+    border-radius: 10px;
+}
+
+.box-mn{
+    background: #101524;
+    position: absolute;
+    width: 460px;
+    height: 40px;
+    left: 0px;
+    top: 30px;
+
+}
+.vson{
+    position: absolute;
+width: 79px;
+height: 36px;
+left: 190px;
+top: 2px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 36px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.3px;
+
+color: #FFFFFF;
+}
+
+.text-m{
+    position: absolute;
+width: 412px;
+height: 128px;
+left: 15px;
+top: 90px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 32px;
+/* or 229% */
+
+text-align: justify;
+letter-spacing: 0.5px;
+
+/* Tertiary Color */
+
+color: #3A4E50;
+
+}
+
+.box-text_1{
+    background: white;
+    position: absolute;
+width: 460px;
+height: 300px;
+left: 760px;
+top: 30px;
+border-radius: 10px;
+}
+.box-mn_1{
+    position: absolute;
+width: 460px;
+height: 40px;
+left: 0px;
+top: 30px;
+
+/* Primary Color */
+
+background: #101524;
+}
+.mson{
+    position: absolute;
+width: 97px;
+height: 36px;
+left: 190px;
+top: 2px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 36px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.3px;
+
+color: #FFFFFF;
+}
+.text-m_1{
+    position: absolute;
+width: 410px;
+height: 160px;
+left: 13px;
+top: 90px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 32px;
+/* or 229% */
+
+text-align: justify;
+letter-spacing: 0.5px;
+
+/* Tertiary Color */
+
+color: #3A4E50;
+}
+.goal-text{
+    position: absolute;
+    background:  #FFF;
+    width: 1000px;
+    height: 265px;
+    left: 323px;
+    top: 703px;
+    border-radius: 10px;
+    
+}
+.hem{
+
+    position: absolute;
+    width: 789px;
+    height: 60px;
+    left: 293px;
+    top: 112px;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.3px;
+    
+    /* White color */
+    
+    color: #FFFFFF;
+
+}
+.goal-bar{
+    position: absolute;
+width: 1000px;
+height: 40px;
+left: 0px;
+top:0px;
+
+/* Primary Color */
+
+background: #101524;
+border-radius: 5px;
+}
+.goal-t{
+    position: absolute;
+width: 560px;
+height: 33px;
+left: 290px;
+top: 2px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 36px;
+display: flex;
+align-items: center;
+letter-spacing: 0.3px;
+
+color: #FFFFFF;
+
+}
+.text-gl{
+    position: absolute;
+width: 800px;
+height: 161px;
+left: 93px;
+top: 67px;
+color: #3A4E50;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 32px;
+/* or 229% */
+
+text-align: justify;
+letter-spacing: 0.5px;
+}
+
+.strategy{
+
+    position: absolute;
+width: 1000px;
+height: 242.62px;
+left: 323px;
+top: 1124px;
+background-color: #FFF;
+border-radius: 10px;
+}
+.strategy-t{
+    position: absolute;
+width: 1000px;
+height: 45.86px;
+left: 0px;
+top: 0px;
+
+/* Primary Color */
+
+background: #101524;
+border-radius: 5px;
+}
+.stategy-text{
+
+    position: absolute;
+width: 153px;
+height: 38px;
+left: 436px;
+top: 2px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 36px;
+display: flex;
+align-items: center;
+letter-spacing: 0.3px;
+
+color: #FFFFFF;
+
+}
+.strategy-content{
+
+    position: absolute;
+    width: 800px;
+    height: 161px;
+    left: 93px;
+    top: 67px;
+    color: #3A4E50;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 32px;
+    /* or 229% */
+    
+    text-align: justify;
+    letter-spacing: 0.5px;
+}
+
+@media screen  and (max-width: 700px) {
+    .box-text{
+        width:min-content;
+        margin: auto;
+        padding: 0;
+        left: 0;
+    }
+    
+}
+@media screen  and (max-width: 550px) {
+    .box-text{
+        width: 315px;
+        margin: auto;
+        
+    left: 2px;
+    }
+    .box-mn{
+        width: 315px;
+    }
+     .vson{
+        font-size: small;
+        left: 150px;
+     }
+     .text-m{
+        width: 300px;
+     }
+}

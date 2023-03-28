@@ -1,0 +1,23 @@
+
+
+.ho{
+    display: flex;
+    flex-direction: row;
+    margin-top: 32%;
+    height: 90vh;
+    width: 100%;
+}
+
+.card1{
+    position: absolute;
+    width: 40vh;
+    height: 60vh;
+    border-radius: 7px;
+    margin-top: 10%;
+    margin-left: -9%;
+    
+
+    
+}
+
+

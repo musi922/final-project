@@ -1,0 +1,54 @@
+.news-card_image{
+
+    position: absolute;
+width: 353px;
+height: 250px;
+left: 0px;
+top: 0px;
+
+background: url('../recourses/resourse1.jpg');
+border-radius: 5px;
+}
+.news-card_title{
+    
+position: absolute;
+width: 350px;
+height: 59px;
+left: 9px;
+top: 247px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+display: flex;
+align-items: center;
+letter-spacing: 0.3px;
+cursor:default;
+/* secondary */
+
+color: #0C101A;
+}
+.news-card_content{
+    
+position: absolute;
+width: 350px;
+height: 48px;
+left: 9px;
+top: 300px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+/* or 171% */
+
+letter-spacing: 0.5px;
+cursor: default;
+
+/* medium dark */
+
+color: #919FAE;
+}
