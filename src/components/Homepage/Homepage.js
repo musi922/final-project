@@ -46,6 +46,7 @@ const Homepage = () => {
         setfeatures(response.data.data);
         console.log(typeof features);
 
+        
         console.log(response.data);
       })
       .catch((error) => {
