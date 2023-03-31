@@ -5,7 +5,7 @@ import './Login.css'
 import image from "../components/Navigation/image.jpg";
 import axios from 'axios';
 
-function Login() {
+function Teacherslogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -14,23 +14,23 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-      
+    
     axios.post('https://new-generation.onrender.com/auth/login', { email, password })
       .then(response => {
-        const { role } = response.data.user; // assuming the response contains a "role" field indicating the user's role
-  
-        if (role === 'admin') {
-          navigate("/dashboard/starter");
-        } else if (role === 'student') {
-          navigate("/Studentdashboard/start");
+       
+        if (response.data.user.role === 'teacher') {
+
+          // handle successful login here
+          navigate("/Teacherdashboard/starters");
         } else {
-          setError("Invalid role");
+          setError("You are not authorized to access this page");
         }
       })
       .catch(error => {
-        setError("Please enter valid credentials");
+        setError("please type valid creditentials");
       });
   };
+  
   
 
   const handleShowPassword = () => {
@@ -90,4 +90,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Teacherslogin;

@@ -6,7 +6,8 @@ const Projectcard = (project) => {
   return (
     <div>
         <div className='proje'>
-            <img src={project.img} style={{height: "25vh", width: "46vh", border: "1px solid transparent", borderRadius: "7px"}}/>
+            {/* <video src={project.img} style={{height: "25vh", width: "46vh", border: "1px solid transparent", borderRadius: "7px"}} controls/> */}
+            <iframe width="360" height="192" src={project.img} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
             <h1 style={{color: "white", fontSize: "20px", marginTop: "-9%", marginLeft: "2%"}}>{project.head}</h1>
             <div className='inputs'>
                 <p1>

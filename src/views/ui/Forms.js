@@ -1,7 +1,47 @@
 import {
   Card, Row,Col,CardTitle,CardBody,Button,Form,FormGroup,Label,Input,FormText,} from "reactstrap";
-
+  import { useState, useEffect } from "react";
 const Formss = () => {
+  const [title, setTittle] = useState("");
+    const [Video, setVideo] = useState("");
+    const [studentName, setStudentName] = useState("");
+    const [schoolId, setSchoolId] = useState("");
+    const [Level, setLevel] = useState("");
+    const [approved, setapproved] = useState("");
+
+  const handleAddBlog = (e) => {
+    e.preventDefault();
+    const data = {
+      title,
+      studentName,
+      schoolId,
+      Level,
+      approved,
+      Video,
+     
+    };
+    onSendPost(data);
+};
+
+function onSendPost(data) {
+    let formData = new FormData();
+    Object.keys(data).forEach(function (key) {
+        formData.append(key, data[key]);
+    });
+
+    fetch("https://new-generation.onrender.com/Project/CreateProject", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MjI3YTRjMjE2ZmE1NzU0Nzc5YTlkYSIsImZpcnN0TmFtZSI6IkRvZSIsImxhc3ROYW1lIjoiTGVzbGllIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRwcnB5bFUydU96bnFTelB5OG9obDZlcldDUVR5RC41WVZwYzkvZXNuT1BTWjlXS0xIYXBaSyIsImRhdGVPZkJpcnRoIjoic3RyaW5nIiwibGV2ZWwiOiJzdHJpbmciLCJzY2hvb2xJZCI6InN0cmluZyIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsIl9fdiI6MH0sImlhdCI6MTY4MDAwNTUyNH0.xYncUT_FqiR6iNbkifSAKHIbFB0GoxuAvDRxoyfg0z0`}
+    })
+    .then((result) => result.json())
+    .then((result) => {
+        console.log(result);
+        alert("really do you want to post to these video ")
+        // navigate("/Dashboard/MyListings")
+    });
+}
   return (
     <Row>
       <Col>
@@ -15,23 +55,27 @@ const Formss = () => {
           </CardTitle>
           <CardBody>
             <Form>
+             
+           
               <FormGroup>
                 <Label for="exampleEmail">Student name</Label>
                 <Input
                   id="exampleEmail"
                   name="name"
                   placeholder="Type your name"
+                  onChange={(e)=> setStudentName(e.target.value)}
                   type="text"
                 />
                 
               </FormGroup>
               <FormGroup>
-                <Label for="examplePassword">Student number</Label>
+                <Label for="examplePassword">Student numberor Id</Label>
                 <Input
                   id="examplePassword"
                   name="number"
                   placeholder="Type only your number"
                   type="number"
+                  onChange={(e)=> setSchoolId(e.target.value)}
                 />
               </FormGroup>
               <FormGroup>
@@ -44,6 +88,16 @@ const Formss = () => {
                   <option>primary 4</option>
                   <option>primary 5</option>
                   <option>primary 6</option>
+                  onChange={(e)=> setLevel(e.target.value)}
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleSelect">Select Approval</Label>
+                <Input id="exampleSelect" name="select" type="select">
+                  <option>false</option>
+                  <option>true</option>
+                  onChange={(e)=> setapproved(e.target.value)}
+                  
                 </Input>
               </FormGroup>
               <FormGroup>
@@ -53,6 +107,7 @@ const Formss = () => {
                   name="number"
                   placeholder="Paste your Link"
                   type="text"
+                  onChange={(e)=> setVideo(e.target.value)}
                 />
               </FormGroup>
               {/* <FormGroup>
@@ -71,42 +126,14 @@ const Formss = () => {
                 </Input>
               </FormGroup> */}
               <FormGroup>
-                <Label for="exampleText">description</Label>
-                <Input id="exampleText" name="text" type="textarea" />
+                <Label for="exampleText">Project title</Label>
+                <Input id="exampleText" name="text" type="text"  onChange={(e)=> setTittle(e.target.value)}/>
               </FormGroup>
-              <FormGroup>
-                <Label for="exampleFile">File</Label>
-                <Input id="exampleFile" name="file" type="file" />
-                <FormText>
-                  This is some placeholder block-level help text for the above
-                  input. It's a bit lighter and easily wraps to a new line.
-                </FormText>
-              </FormGroup>
-              <FormGroup tag="fieldset">
-                <legend>Radio Buttons</legend>
-                <FormGroup check>
-                  <Input name="radio1" type="radio" />{" "}
-                  <Label check>
-                    Option one is this and that—be sure to include why it's
-                    great
-                  </Label>
-                </FormGroup>
-                <FormGroup check>
-                  <Input name="radio1" type="radio" />{" "}
-                  <Label check>
-                    Option two can be something else and selecting it will
-                    deselect option one
-                  </Label>
-                </FormGroup>
-                <FormGroup check disabled>
-                  <Input disabled name="radio1" type="radio" />{" "}
-                  <Label check>Option three is disabled</Label>
-                </FormGroup>
-              </FormGroup>
+             
               <FormGroup check>
                 <Input type="checkbox" /> <Label check>Check me out</Label>
               </FormGroup>
-              <Button>Submit</Button>
+              <Button onClick={(e) => handleAddBlog(e)}>Submit</Button>
             </Form>
           </CardBody>
         </Card>

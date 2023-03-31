@@ -24,6 +24,21 @@ const Addnewteachers = lazy(() => import("../Teacherdashboard/AddnewTeacher"));
 const Breadcrumbss = lazy(() => import("../Teacherdashboard/ui/Breadcrumbs"));
 
 /***** Pages ****/
+const FullLayoutss = lazy(() => import("../Teacherdashboard/layouts/FullLayouts"));
+
+const Start = lazy(() => import("../Studentdashboard/Start.js"));
+const Aboutsss = lazy(() => import("../Studentdashboard/Aboutsss"));
+const Alertsss = lazy(() => import("../Studentdashboard/ui/Alertss"));
+const Badgesss = lazy(() => import("../Studentdashboard/ui/Badgess"));
+// const Buttons = lazy(() => import("../views/ui/Buttons"));
+const Cardsss = lazy(() => import("../Studentdashboard/ui/Cardss"));
+const Gridss = lazy(() => import("../Studentdashboard/ui/Grids"));
+const Tablesss = lazy(() => import("../Studentdashboard/ui/Tabless"));
+const Formsss = lazy(() => import("../Studentdashboard/ui/Formss"));
+const Addnewstudent = lazy(() => import("../Studentdashboard/AddnewStudent"));
+const Breadcrumbsss = lazy(() => import("../Studentdashboard/ui/Breadcrumbss"));
+
+/***** Pages ****/
 
 const Starter = lazy(() => import("../views/Starter.js"));
 const About = lazy(() => import("../views/About.js"));
@@ -48,6 +63,8 @@ const Singlestudent =lazy(()=> import("../components/Singlestudent"))
 const Register =lazy(()=> import("../components/Register"))
 const Staff =lazy(()=> import("../components/Staff/Staff"))
 const TeacherPage =lazy(()=> import("../components/TeacherPage/TeacherPage"))
+const Teacherslogin =lazy(()=> import("../components/Teacherslogin.js"))
+
 
 
 /*****Routes******/
@@ -99,8 +116,12 @@ path: "/Staffpage",
 element: <Staff/>,
   },
   {
-path: "/TeacherPage",
+path: "/teacherPage",
 element: <TeacherPage/>,
+  },
+  {
+path: "/TeachersLoginpage",
+element: <Teacherslogin/>,
   },
   {
     
@@ -138,6 +159,25 @@ element: <TeacherPage/>,
       { path: "/Teacherdashboard/formss", exact: true, element: <Formss /> },
       { path: "/Teacherdashboard/Addnewteachers", exact: true, element: <Addnewteachers /> },
       { path: "/Teacherdashboard/breadcrumbss", exact: true, element: <Breadcrumbss /> },
+    ],
+  },
+  {
+    
+    path: "/Studentdashboard",
+    element: <FullLayoutss />,
+    children: [
+      { path: "/Studentdashboard", element: <Navigate to="/start" /> },
+      { path: "/Studentdashboard/start", exact: true, element: <Start /> },
+      { path: "/Studentdashboard/abouts", exact: true, element: <Aboutsss /> },
+      { path: "/Studentdashboard/alertss", exact: true, element: <Alertsss /> },
+      { path: "/Studentdashboard/badgess", exact: true, element: <Badgesss /> },
+      // { path: "/dashboard/buttons", exact: true, element: <Buttons /> },
+      { path: "/Studentdashboard/cardss", exact: true, element: <Cardsss /> },
+      { path: "/Studentdashboard/grids", exact: true, element: <Gridss /> },
+      { path: "/Studentdashboard/tables", exact: true, element: <Tablesss /> },
+      { path: "/Studentdashboard/formss", exact: true, element: <Formsss /> },
+      { path: "/Studentdashboard/Addnewteachers", exact: true, element: <Addnewstudent /> },
+      { path: "/Studentdashboard/breadcrumbss", exact: true, element: <Breadcrumbsss /> },
     ],
   },
 ];

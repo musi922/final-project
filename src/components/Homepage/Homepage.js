@@ -19,15 +19,40 @@ import { SiGoogleclassroom } from "react-icons/si"
 import { GiVintageRobot } from "react-icons/gi"
 import { SiKhanacademy } from "react-icons/si"
 import Projectcard from '../Projectcard/Projectcard';
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 import { MdDoubleArrow} from "react-icons/md"
 import { MdOutlineKeyboardDoubleArrowLeft} from "react-icons/md"
 import Reasons from '../Projectcard/Reasonscards/Reasons';
 import { CiLocationOn } from "react-icons/ci"
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 const Homepage = () => {
+  const[features ,setfeatures]= useState([])
+
+  useEffect(() => {
+    const config = {
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MjI3YTRjMjE2ZmE1NzU0Nzc5YTlkYSIsImZpcnN0TmFtZSI6IkRvZSIsImxhc3ROYW1lIjoiTGVzbGllIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRwcnB5bFUydU96bnFTelB5OG9obDZlcldDUVR5RC41WVZwYzkvZXNuT1BTWjlXS0xIYXBaSyIsImRhdGVPZkJpcnRoIjoic3RyaW5nIiwibGV2ZWwiOiJzdHJpbmciLCJzY2hvb2xJZCI6InN0cmluZyIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsIl9fdiI6MH0sImlhdCI6MTY4MDAwNTUyNH0.xYncUT_FqiR6iNbkifSAKHIbFB0GoxuAvDRxoyfg0z0`,
+      },
+    };
+    axios
+      .get(
+        "https://new-generation.onrender.com/Project/All",
+        config
+      )
+      .then((response) => {
+        setfeatures(response.data.data);
+        console.log(typeof features);
+
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   const [currentCard, setCurrentCard] = useState(0);
 
   const Homecard = [
@@ -268,13 +293,10 @@ aqua lorem ipsum folor suit met voul adnoi<br></br>bury adpci diul lorem.</p1>
     
     <div className='projects'>
       <div className='cardone' id='0'>
-      <Projectcard img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO9IzO2nC-9dmOVxSR5xfKT8JZ_L0oVgYA3A&usqp=CAU" head="Robots Project" 
-      studentname="Manzi fred" studentno="12" class="p3" date="01-01-2023"/>
-      <Projectcard img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO9IzO2nC-9dmOVxSR5xfKT8JZ_L0oVgYA3A&usqp=CAU" head="Robots Project" studentname="Manzi fred" />
-      <Projectcard img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO9IzO2nC-9dmOVxSR5xfKT8JZ_L0oVgYA3A&usqp=CAU" head="Robots Project" studentname="Manzi fred" />
-      <Projectcard img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO9IzO2nC-9dmOVxSR5xfKT8JZ_L0oVgYA3A&usqp=CAU" head="Robots Project" studentname="Manzi fred" />
-      <Projectcard img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO9IzO2nC-9dmOVxSR5xfKT8JZ_L0oVgYA3A&usqp=CAU" head="Robots Project" studentname="Manzi fred" />
-      <Projectcard img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO9IzO2nC-9dmOVxSR5xfKT8JZ_L0oVgYA3A&usqp=CAU" head="Robots Project" studentname="Manzi fred"/>
+      {features?.map((feature) => (
+      <Projectcard img={feature.Video} head={feature.title}
+      studentname={feature.studentName} studentno={feature.schoolId} class={feature.Level} date={feature.date}/>
+      ))}
       </div >
        <div className='no'>
        <div className='nexte'>

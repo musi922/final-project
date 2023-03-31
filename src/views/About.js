@@ -8,84 +8,51 @@ import user4 from "../assets/images/users/user4.jpg";
 import user5 from "../assets/images/users/user5.jpg";
 import { Link } from 'react-router-dom';
 
+import { useState, useEffect } from "react";
+import axios from 'axios';
 const About = () => {
-  const features = [
-    {
-      title: 'Prof Richard',
-      desc: 'Create React App is a tool that gives you a massive head start when building React apps.',
-      icon: user2,
-    },
-    {
-      title: 'Prof william',
-      desc: 'Hooks are functions that let you “hook into” React state and lifecycle features from function components.',
-      icon: user4,
-    },
-    {
-      title: 'Prof Tresor',
-      desc: 'It is isomorphic authorization JavaScript library which restricts what resources a given client is allowed to access.',
-      icon: user3,
-    },
-    {
-      title: 'Prof Remy',
-      desc: 'This theme comes with built-in light & dark layouts, select as per your preference.',
-      icon: user1,
-    },
-    {
-      title: 'Prof Mucyo',
-      desc: 'Built-in customizer enables users to change their admin panel look & feel based on their preferences.',
-      icon: user5,
-    },
-    {
-      title: 'Prof Mugabe',
-      desc: 'Creative & smart well crafted apps like email, chat, todo & calender allows you to create your apps faster.',
-      icon: user1,
-    },
-    {
-      title: 'Prof Mugabo',
-      desc: 'Beautifully crafted, clean & modern designed admin theme with 5 different demos & light - dark versions.',
-      icon: user2,
-    },
-    {
-      title: 'Prof William',
-      desc: 'Carefully crafted, clean, smart & easy theme navigation with collapsible option.',
-      icon: user3,
-    },
-    {
-      title: 'Prof Richardo',
-      desc: 'jQuery is great JS library, But Its not a great idea to use jQuery and React in the same UI.',
-      icon: user4,
-    },
-    {
-      title: 'Prof Dan',
-      desc: 'Unlimited color options allows you to set your application color as per your branding.',
-      icon: user5,
-    },
-    {
-      title: 'Prof fred',
-      desc: 'To avoid winding up with a large bundle, it’s good to get ahead of the problem and use "Code Splitting".',
-      icon: user3,
-    },
-    {
-      title: 'Prof fred',
-      desc: 'Its more efficient to split each routes components into a separate chunk, and only load them when the route is visited.',
-      icon:user1,
-    },
-    {
-      title: 'Prof fred',
-      desc: 'Regular updates with new demos and features is guaranteed',
-      icon: user5,
-    },
-    {
-      title: 'Prof billy',
-      desc: 'We follow the best industry code structure that all developers will be able to pick up easily and fall in love',
-      icon: user2,
-    },
-    {
-      title: 'Prof Kevine',
-      desc: 'Premium customer support from the actual people who have created.',
-      icon: user1,
-    },
-  ];
+  const[features ,setfeatures]= useState([])
+
+  useEffect(() => {
+    const config = {
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MjI3YTRjMjE2ZmE1NzU0Nzc5YTlkYSIsImZpcnN0TmFtZSI6IkRvZSIsImxhc3ROYW1lIjoiTGVzbGllIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRwcnB5bFUydU96bnFTelB5OG9obDZlcldDUVR5RC41WVZwYzkvZXNuT1BTWjlXS0xIYXBaSyIsImRhdGVPZkJpcnRoIjoic3RyaW5nIiwibGV2ZWwiOiJzdHJpbmciLCJzY2hvb2xJZCI6InN0cmluZyIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsIl9fdiI6MH0sImlhdCI6MTY4MDAwNTUyNH0.xYncUT_FqiR6iNbkifSAKHIbFB0GoxuAvDRxoyfg0z0`,
+      },
+    };
+    axios
+      .get(
+        "https://new-generation.onrender.com/Admin/GetAllTeacher",
+        config
+      )
+      .then((response) => {
+        setfeatures(response.data.data);
+        console.log(typeof features);
+
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const handleDecline = (id) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MjI3YTRjMjE2ZmE1NzU0Nzc5YTlkYSIsImZpcnN0TmFtZSI6IkRvZSIsImxhc3ROYW1lIjoiTGVzbGllIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRwcnB5bFUydU96bnFTelB5OG9obDZlcldDUVR5RC41WVZwYzkvZXNuT1BTWjlXS0xIYXBaSyIsImRhdGVPZkJpcnRoIjoic3RyaW5nIiwibGV2ZWwiOiJzdHJpbmciLCJzY2hvb2xJZCI6InN0cmluZyIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsIl9fdiI6MH0sImlhdCI6MTY4MDAwNTUyNH0.xYncUT_FqiR6iNbkifSAKHIbFB0GoxuAvDRxoyfg0z0`,
+      },
+    };
+    axios
+      .delete(
+        `https://new-generation.onrender.com/Admin/deleteTeacher/${id}`,
+        config
+      )
+      .then((response) => {
+        setfeatures(features.filter((item) => item._id !== id));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <Row>
       <Col>
@@ -117,27 +84,39 @@ const About = () => {
           </Row>
         </ComponentCard>
         <ComponentCard title="Teachers">
-          <Row>
-            {features.map((feature) => (
-              <Col lg="4" className="mb-5 pb-3" key={feature.title}>
-                <div>
-                <img
-                        src={feature.icon}
-                        className="rounded-circle"
-                        alt="avatar"
-                        width="45"
-                        height="45"
-                      />
+  <Row>
+    {features?.map((feature) => (
+      <Col lg="4" className="mb-5 pb-3" key={feature._id}>
+        <div style={{background:"#fff",borderRadius:"5px",boxShadow:"2px 2px 4px rgba(0, 0, 0, 0.2)", 
+        }}>
+          <div style={{marginLeft:"33%"}}>
+          <img
+            src={feature.image}
+            className="rounded-circle"
+            alt="avatar"
+            width="100"
+            height="100"
+            
+          />
+          </div>
+          <div style={{marginLeft:"26%"}}>
+          <CardTitle tag="h4" className="my-3">
+            {feature.firstName + " " + feature.lastName}
+          </CardTitle>
+          </div>
+          <div style={{marginLeft:"6%"}}>
+          <CardSubtitle className="text-muted col-10">{feature.dateOfBirth}</CardSubtitle>
+          </div>
+          <div style={{marginLeft:"40%",}}>
+          <button class="btn btn-danger"
+                        onClick={() => handleDecline(feature._id)}>Delete</button>
+                        </div>
+        </div>
+      </Col>
+    ))}
+  </Row>
+</ComponentCard>
 
-                  <CardTitle tag="h4" className="my-3">
-                    {feature.title}
-                  </CardTitle>
-                  <CardSubtitle className="text-muted col-10">{feature.desc}</CardSubtitle>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </ComponentCard>
       </Col>
     </Row>
   );

@@ -4,24 +4,23 @@ import { Link } from "react-router-dom";
 const Cardk = ({ image, name, field }) => {
   return (
     <>
-      <div className="docNurseContainer">
+      <div className="docNurseContainer"  style={{marginLeft:"35%", height:"33vh"}}>
         <div
           style={{
             backgroundImage: `url(${image})`,
-            width: "150px",
-            height: "150px",
+            width: "450px",
+            height: "110px",
             borderRadius: "75px",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
+            marginTop:"18%"
           }}
         ></div>
         <div className="docNurseDescription">
           <p className="doci"> {name}</p>
           <p className="cari">{field}</p>
-          <Link to="/appointmentBooking">
-            <p className="appointment"> <Link to={"/TeacherPage"}>  More Info</Link>  </p>
-          </Link>
+          <Link to={"/teacherpage"}>more info</Link>
         </div>
       </div>
     </>

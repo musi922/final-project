@@ -6,12 +6,54 @@ import { AiOutlineMail } from "react-icons/ai"
 import { HiOutlinePhoneMissedCall } from "react-icons/hi"
 import { CiLocationOn } from "react-icons/ci"
 import { BsArrowRight } from "react-icons/bs"
+import { useState, useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const Contactus = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // handle form submission here
-  };
+  const [Firstname, setFirstname] = useState("");
+  const [Lastname, setLastname] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Message, setMessage] = useState("");
+  
+
+
+  const handleContact = (e) => {
+    e.preventDefault();
+    const data = {
+      Firstname, 
+      Lastname,
+      Email,
+      Message,
+    };
+    onSendPost(data);
+};
+function onSendPost(data) {
+  // let formData = new FormData();
+  // Object.keys(data).forEach(function (key) {
+  //   formData.append(key, data[key]);
+  // });
+
+  axios.post('https://new-generation.onrender.com/CreateContacts',data).then((result)=>console.log(result)).catch((err)=>console.log(err))
+  
+  // fetch("https://new-generation.onrender.com/CreateContacts", {
+  //   method: "POST",
+  //   body: data,
+   
+  // })
+  //   // .then((result) => result.json())
+  //   .then((result) => {
+  //     console.log(result);
+  //     alert("Message sent we will be in touch with you ");
+      
+  //     // Save the token to local storage
+      
+      
+  //     // Navigate to the desired page
+  //   });
+}
+
+
 
   return (
     
@@ -25,28 +67,28 @@ const Contactus = () => {
     <div className="contact-us-container">
       <div className="contact-us">
         <h2>Contact Us</h2>
-        <form onSubmit={handleSubmit}>
+        <form >
           <div className="form-group">
             <label htmlFor="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required />
+            <input type="text" id="firstName" name="firstName" required onChange={(e)=> setFirstname(e.target.value)}/>
           </div>
           <div className="form-group">
             <label htmlFor="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" required />
+            <input type="text" id="lastName" name="lastName" required onChange={(e)=> setLastname(e.target.value)}/>
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" required onChange={(e)=> setEmail(e.target.value)}/>
           </div>
           <div className="form-groups">
             <label htmlFor="message">Message</label>
-            <input id="message" name="message" className='mes' required />
+            <input id="message" name="message" className='mes' required onChange={(e)=> setMessage(e.target.value)}/>
           </div>
           <div className="form-group">
             <div className="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
           </div>
           <div className="form-group">
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={(e) => handleContact(e)}>Submit</button>
           </div>
         </form>
       </div>
