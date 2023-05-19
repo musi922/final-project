@@ -11,13 +11,13 @@ import {
 
 const FeedData = [
   {
-    title: " Richard Submitted assignment",
+    title: " You Submitted assignment",
     icon: "bi bi-bell",
     color: "primary",
     date: "8 minute ago",
   },
   {
-    title: "musime submitted assignment.",
+    title: "You submitted assignment.",
     icon: "bi bi-person",
     color: "info",
     date: "7 minute ago",
@@ -29,7 +29,7 @@ const FeedData = [
     date: "6 minute ago",
   },
   {
-    title: "william submitted application",
+    title: "You submitted application",
     icon: "bi bi-bag-check",
     color: "success",
     date: "5 minute ago",

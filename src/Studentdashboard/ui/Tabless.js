@@ -10,7 +10,7 @@ const Tablesss = () => {
     <Row>
       
         <ComponentCard
-          title="Teachers Profile Information"
+          title="Student Profile Information"
           subtitle={
             <p>
            Send your information to the admin...

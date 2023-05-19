@@ -9,10 +9,11 @@ const navigation = [
     icon: "bi bi-speedometer2",
   },
   {
-    title: "Notifications and Alert",
-    href: "/dashboard/alerts",
-    icon: "bi bi-bell",
+    title: "Messages",
+    href: "/dashboard/badges",
+    icon: "bi bi-patch-check",
   },
+  
   {
     title: "Teachers list",
     href: "/dashboard/about",
@@ -24,27 +25,25 @@ const navigation = [
     href: "/dashboard/cards",
     icon: "bi bi-card-text",
   },
-  {
-    title: "Projects form",
-    href: "/dashboard/forms",
-    icon: "bi bi-textarea-resize",
-  },
+  
   
   {
-    title: "Students List",
+    title: "Add new student",
     href: "/dashboard/table",
     icon: "bi bi-layout-split",
   },
   
+ 
+ 
   {
-    title: "Quick Links",
-    href: "/dashboard/breadcrumbs",
-    icon: "bi bi-link",
+    title: "Subscribes",
+    href: "/dashboard/Subscribe",
+    icon: "bi bi-patch-check",
   },
   {
-    title: "Messages",
-    href: "/dashboard/badges",
-    icon: "bi bi-patch-check",
+    title: "Notifications and Alert",
+    href: "/dashboard/alerts",
+    icon: "bi bi-bell",
   },
 ];
 

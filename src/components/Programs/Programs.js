@@ -74,7 +74,7 @@ const Programspage = () => {
           <h3>in activities that help them grew physically,intellectually socially and spiritully. nkcsojsspcslmcmoscosjcjj</h3>
         </div>
         <div className='nus'>
-        <input placeholder='Search...' className='inpute'/> <AiOutlineSearch className='searche'/>
+        {/* <input placeholder='Search...' className='inpute'/> <AiOutlineSearch className='searche'/> */}
         <h1>Primary activities</h1>
         </div>
         <div className='calendar-container' style={{marginTop: "15%", marginLeft: "60%"}}>

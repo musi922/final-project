@@ -1,5 +1,5 @@
 import { Button, Nav, NavItem } from "reactstrap";
-import Logo from "./Logo";
+import Logo from "./Logos";
 import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
@@ -8,30 +8,27 @@ const navigation = [
     href: "/Studentdashboard/start",
     icon: "bi bi-speedometer2",
   },
-  {
-    title: "Profile",
-    href: "/Studentdashboard/tables",
-    icon: "bi bi-card-text",
-  },  
+   
   {
     title: "Students Projects",
     href: "/Studentdashboard/abouts",
     icon: "bi bi-card-text",
   },
   {
-    title: "Assignments form",
-    href: "/Studentdashboard/formss",
-    icon: "bi bi-textarea-resize",
+    title: "Projects form",
+    href: "/Studentdashboard/Projectsform",
+    icon: "bi bi-card-text",
   },
+ 
   {
     title: "Assignments",
     href: "/Studentdashboard/cardss",
     icon: "bi bi-layout-split",
   },
   {
-    title: "Notifications and Alert",
-    href: "/Studentdashboard/alertss",
-    icon: "bi bi-bell",
+    title: "Assignments form",
+    href: "/Studentdashboard/formss",
+    icon: "bi bi-textarea-resize",
   },
   {
     title: "Quick Links",
@@ -45,7 +42,7 @@ const navigation = [
   },
 ];
 
-const Sidebars = () => {
+const Sidebarss = () => {
   const showMobilemenu = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
@@ -93,4 +90,4 @@ const Sidebars = () => {
   );
 };
 
-export default Sidebars;
+export default Sidebarss;

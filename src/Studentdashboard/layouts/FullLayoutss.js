@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Sidebar from "./Sidebars";
-import Header from "./Header";
+import Sidebarss from "./Sidebarss";
+import Headerss from "./Headerss";
 import { Container } from "reactstrap";
 
 const FullLayoutss = () => {
@@ -9,13 +9,13 @@ const FullLayoutss = () => {
       <div className="pageWrapper d-lg-flex">
         {/********Sidebar**********/}
         <aside className="sidebarArea shadow" id="sidebarArea">
-          <Sidebar />
+          <Sidebarss />
         </aside>
         {/********Content Area**********/}
 
         <div className="contentArea">
           {/********header**********/}
-          <Header />
+          <Headerss />
           {/********Middle Content**********/}
           <Container className="p-4 wrapper" fluid>
             <Outlet />

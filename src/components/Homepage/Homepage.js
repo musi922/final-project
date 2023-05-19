@@ -29,31 +29,106 @@ import axios from 'axios';
 
 
 const Homepage = () => {
-  const[features ,setfeatures]= useState([])
+  const[features ,setfeatures]= useState([]);
+  const [email, setEmail] = useState("");
+  const [fullname, setfullname] = useState("");
+
+
+
+
+
+  const handleContact = (e) => {
+    e.preventDefault();
+    const data = {
+
+      email,
+      fullname,
+      
+    };
+    onSendPost(data);
+};
+function onSendPost(data) {
+
+  axios.post('https://new-generation.onrender.com/Subscribe',data)
+  
+  .then((result)=>console.log(result))
+  alert("you have subscribed to our news letter")
+  .catch((err)=>console.log(err))
+  
+  
+}
+
+
+
 
   useEffect(() => {
-    const config = {
-      headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MjI3YTRjMjE2ZmE1NzU0Nzc5YTlkYSIsImZpcnN0TmFtZSI6IkRvZSIsImxhc3ROYW1lIjoiTGVzbGllIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRwcnB5bFUydU96bnFTelB5OG9obDZlcldDUVR5RC41WVZwYzkvZXNuT1BTWjlXS0xIYXBaSyIsImRhdGVPZkJpcnRoIjoic3RyaW5nIiwibGV2ZWwiOiJzdHJpbmciLCJzY2hvb2xJZCI6InN0cmluZyIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsIl9fdiI6MH0sImlhdCI6MTY4MDAwNTUyNH0.xYncUT_FqiR6iNbkifSAKHIbFB0GoxuAvDRxoyfg0z0`,
-      },
-    };
-    axios
-      .get(
-        "https://new-generation.onrender.com/Project/All",
-        config
-      )
-      .then((response) => {
-        setfeatures(response.data.data);
-        console.log(typeof features);
-
+     const config = {
+       headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MjU5MzMxY2JkNTZjYzYwOTI4MmI1NSIsImZpcnN0TmFtZSI6IlByb2YiLCJsYXN0TmFtZSI6IlJlbXkiLCJlbWFpbCI6IlJlbXlAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkWXVLc3hvZmFmQXRnbFdFck0yS3pqZVdSeGtoSXN4dlFuSU1RZnZuUWc5ckdrRklwM2FOTXUiLCJkYXRlT2ZCaXJ0aCI6IkhlIGlzIHRoZSBoZWFkIHRlYWNoZXIgb2YgTmV3IGdlbmVyYXRpb24gd2hlcmUgaGUgaGFzIGJ1Y2hlbG9ycyBkZWdyZWUgaW4gaHVtYW4gcmlnaHRzIGFuZCBlY29ub21pY3MgYW5kIGhlIGlzIFRlYWNoZXIgb2YgcHJpbWFyeSB0aHJlZVxyXG4iLCJpbWFnZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RheGV5bXF2di9pbWFnZS91cGxvYWQvdjE2ODAxODQxMTMvZnBzbjFnYWl1MmFvMW9qdmpjZzQuanBnIiwicm9sZSI6InRlYWNoZXIiLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTMwVDEzOjQ4OjMzLjcyNVoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAzLTMwVDEzOjQ4OjMzLjcyNVoiLCJfX3YiOjB9LCJpYXQiOjE2ODA1MTgzMTd9.P_nLpsjBitlYZpn7nNLiBmEoitzA6TucqZX9CuvjVV4`,
+       },
+     };
+     axios
+       .get(
+         "https://new-generation.onrender.com/Project/approvedProjects/All",
+         config
+       )
+       .then((response) => {
+         setfeatures(response.data.data);
         
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+         console.log(response.data.projects);
 
+         console.log(typeof features);
+
+
+
+         console.log(response.data);
+     })
+       .catch((error) => {
+         console.log(error);
+       });
+   }, []);
+  
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [showMoreInfo, setShowMoreInfo] = useState(false);
+  
+  
+  
+  const featuresPerPage = 6;
+  
+  const indexOfLastFeature = currentPage * featuresPerPage;
+  const indexOfFirstFeature = indexOfLastFeature - featuresPerPage;
+  const currentFeatures = features.slice(indexOfFirstFeature, indexOfLastFeature);
+  
+  const handlePageChange = (e) => {
+    const page = Number(e.target.id);
+    setCurrentPage(page);
+    setSelectedProject(null);
+    setShowMoreInfo(false);
+  };
+  
+  const handleCardClick = (e) => {
+    const id = Number(e.target.id);
+    setSelectedProject(id);
+    setShowMoreInfo(true);
+  };
+  
+ 
+  
+  const handleAddProject = (newProject) => {
+    // Add the new project to the beginning of the array
+    features.unshift(newProject);
+  
+    // Set currentPage to 1 to display the new project on the first page
+    setCurrentPage(1);
+  };
+  
+
+
+
+
+
+  
   const [currentCard, setCurrentCard] = useState(0);
 
   const Homecard = [
@@ -65,7 +140,7 @@ const Homepage = () => {
     },
     {
       id: uuidv4(),
-      video: "https://www.youtube.com/embed/ncvtUuUfqP8",
+      video: "p",
       description: "Robot Project",
 
     },
@@ -134,11 +209,17 @@ const Homepage = () => {
   ];
   return (
     <div>
+
       {/* landing Page */}
       <Navigation/>
+      
       {/* Homepage first screen */}
       <div className="section1">
+      <div><img src={image} alt="not found" style={{height: "70vh",top:"99px", width: "100%", backGroundPosition: "center", backGroundSize: "cover", position:"absolute"}}/></div>
+
+        
         <div className='carousel-container' id='carousel-1-container'>
+          
         {/* <h1 style={{position: "absolute", color: "white", marginLeft:"42%", marginTop: "-60%", fontSize: "26px"}}>Welcome to New Generation Academy</h1> */}
           <h1 style={{position: "absolute", color: "rgb(169, 165, 165)", marginLeft:"-55%", marginTop: "-57%", fontSize: "20px"}}>Student Project</h1>
           
@@ -275,8 +356,8 @@ aqua lorem ipsum folor suit met voul adnoi<br></br>bury adpci diul lorem.</p1>
       <div className='box1'>
         <SiGoogleclassroom className="room"/>
         <h1>Nursery Projects</h1>
-        <p1>We teach our students the way to make the best<br></br></p1>
-        <h2>things required world wide</h2>
+        <p1>We teach our students the way to make the <br></br></p1>
+        <h2 >things required world wide</h2>
       </div>
       <div className='box2'>
       <GiVintageRobot className="room"/>
@@ -293,30 +374,46 @@ aqua lorem ipsum folor suit met voul adnoi<br></br>bury adpci diul lorem.</p1>
     </div>
     
     <div className='projects'>
-      <div className='cardone' id='0'>
-      {features?.map((feature) => (
-      <Projectcard img={feature.Video} head={feature.title}
-      studentname={feature.studentName} studentno={feature.schoolId} class={feature.Level} date={feature.date}/>
+    
+    <div className='cardone' id='0'>
+      {currentFeatures?.map((feature) => (
+        <Projectcard
+          key={feature.id}
+          img={feature.Video}
+          head={feature.title}
+          studentname={feature.student.firstName + " "+ feature.student.lastName}
+          studentno={feature.schoolId}
+          class={feature.Level}
+          date={feature.date}
+          onClick={handleCardClick}
+          id={feature.id}
+        />
       ))}
-      </div >
-       <div className='no'>
-       <div className='nexte'>
-        <MdOutlineKeyboardDoubleArrowLeft/>
+    </div >
+    {showMoreInfo ? (
+      <div>
+        <h1>Project Info: {selectedProject}</h1>
+        {/* Other project info here */}
       </div>
-       <div className='numbers'>
-        <h1>1</h1>
+    ) : (
+      <div className='no'>
+        <div className='nexte'>
+          <MdOutlineKeyboardDoubleArrowLeft/>
+        </div>
+        <div className='numbers'>
+          <h1 onClick={handlePageChange} id='1' className={currentPage === 1 ? 'active' : ''} style={{cursor:"pointer"}}>1</h1>
+        </div>
+        <div className='number2'>
+          <h1 onClick={handlePageChange} id='2' style={{cursor:"pointer"}}>2</h1>
+        </div>
+        <div className='number3'>
+          <h1 onClick={handlePageChange} id='3' style={{cursor:"pointer"}}>3</h1>
+        </div>
+        <div className='nex'>
+          <MdDoubleArrow/>
+        </div>
       </div>
-       <div className='number2'>
-        <h1>2</h1>
-      </div>
-      <div className='number3'>
-        <h1>3</h1>
-      </div>
-      <div className='nex'>
-        <MdDoubleArrow/>
-      </div>
-      
-      </div>
+    )}
     </div>
     {/* reasons to join us */}
       <div className='reasonis'>
@@ -362,12 +459,17 @@ aqua lorem ipsum folor suit met voul adnoi<br></br>bury adpci diul lorem.</p1>
           <p1 style={{color: "white", cursor: "pointer", marginLeft:"-2%"}}>Avenue: KGAV23</p1><br></br>
           <p1 style={{color: "white", cursor: "pointer", marginLeft:"-2%"}}>Email:Newgeaneration@gmail.com</p1><br></br>
           </div>
+
           <div className='fourthly'>
-          <h1 style={{color: "white",fontSize:"19px", marginTop:"-1%", marginLeft:"1%"}}>Let's Stay Connected</h1>
-          <input placeholder='Your Email' className='your' style={{color:"white"}}/>
-           <button className='subo'>Submit</button>
-           <h1 style={{color: "white", cursor: "pointer", marginLeft:"-2%", marginTop: "2%"}}>Subscribe to our NewsLetter</h1>
-           <button className='newsletter'>NewsLetter<BsArrowRight/></button>
+          <h1 style={{color: "white",fontSize:"19px", marginTop:"-1%", marginLeft:"1%"}}>Subscribe our NewsLetter</h1>
+          <input placeholder='Your full name' className='your' style={{color:"white"}} onChange={(e)=> setfullname(e.target.value)}/>
+          <input placeholder='Your Email' className='your' style={{color:"white"}} onChange={(e)=> setEmail(e.target.value)}/>
+          <br></br>
+
+           <button type="submit" className='subo' onClick={(e) => handleContact(e)} style={{cursor:"pointer"}}>Submit</button>
+           <br></br>
+           <br></br>
+           <br></br>
            
           </div>
           <div className='fifth'>
@@ -381,7 +483,7 @@ aqua lorem ipsum folor suit met voul adnoi<br></br>bury adpci diul lorem.</p1>
           <div className='pici'></div>
           <div>
             <h1 style={{color: "#0193DC", marginTop: "2%", marginLeft: "1%"}}>New Generation Academy<br></br><span style={{color:"white"}}>Transformed For Community</span></h1>
-            <p1 style={{color:"rgb(154, 153, 153)", fontSize: "16px", marginTop: "2%", marginLeft: "16%", position: "absolute"}}>&copy; {2023} New Generation Academy. All Rights Reserved.</p1>
+            <p1 style={{color:"rgb(154, 153, 153)", fontSize: "16px", marginTop: "2%", marginLeft: "16%", position: "absolute"}}>&copy; {2023} New Generation Academy. All Rights Reserved.created by 0799340499</p1>
           </div>
 
         </div>
@@ -391,4 +493,4 @@ aqua lorem ipsum folor suit met voul adnoi<br></br>bury adpci diul lorem.</p1>
   )
 }
 
-export default Homepage
+export default Homepage;

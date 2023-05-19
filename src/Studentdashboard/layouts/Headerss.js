@@ -17,7 +17,7 @@ import {
 import { ReactComponent as LogoWhite } from "../../assets/images/logos/xtremelogowhite.svg";
 import user1 from "../../assets/images/users/user1.jpg";
 
-const Headers = () => {
+const Headerss = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
@@ -105,4 +105,4 @@ const Headers = () => {
   );
 };
 
-export default Headers;
+export default Headerss;

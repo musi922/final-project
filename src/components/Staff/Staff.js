@@ -13,6 +13,8 @@ import blac from '../../assets/image/recourses/blac.jpg'
 import Cardk from "../card-kvn/Cardk"
 import { Link } from 'react-router-dom'
 import '../Account.css'
+import '../Homepage/Homepage.css';
+import { CiLocationOn } from "react-icons/ci"
 
 import { useState, useEffect } from "react";
 import axios from 'axios';
@@ -35,7 +37,7 @@ const Staff = () => {
         config
       )
       .then((response) => {
-        setfeatures(response.data.teacher);
+        setfeatures(response.data.data);
         console.log(typeof features);
 
         console.log(response.data);
@@ -89,24 +91,82 @@ const Staff = () => {
     
 
       </div>
-      {hospitals.length === 0 && showTopSearches && (
-      <div className='teacher-card'>
       
-        {features.map((feature) => {
-          return (
-              <Cardk image={feature.image} name={feature.firstName + " " + feature.lastName} field={feature.dateOfBirth}/>
-              
-          )
-          })}
+      <div className='teacher-card'>
+
+
+        
+      
+{features?.map((feature) => (
+      <Cardk image={feature.image} name={feature.firstName + " " + feature.lastName} field={feature.dateOfBirth}/>))}
+   
+  
+
 
      
          
       
       </div>
        
-       )}
+       
        <div className='teacher-card'>
        {hospitals.map((feature) => (  <Cardk image={feature.image} name={feature.firstName + " " + feature.lastName} field={feature.users.dateOfBirth}/>))}</div>
+       <br></br>
+       <br></br>
+       <div className='footer'>
+        
+        <div className='footer2'>
+          <div className='firstly'>
+            <h1 style={{color: "white",fontSize:"19px", marginTop:"-3%", marginLeft:"1%"}}>Social Media</h1>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}>Instagram</p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}>Facebook</p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}>Twitter</p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}>Linkedin</p1><br></br>
+          </div>
+          <div className='secondly'>
+          <h1 style={{color: "white",fontSize:"19px", marginTop:"-3%", marginLeft:"1%"}}>Quick Links</h1>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}><Link to={"/"} style={{color:"white", textDecoration:"none"}}>Homepage</Link></p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}><Link to={"/AboutPage"} style={{color:"white", textDecoration:"none"}}>About Us</Link></p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}><Link to={"/Programspage"} style={{color:"white", textDecoration:"none"}}>Programs</Link></p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}><Link to={"/Newspage"} style={{color:"white", textDecoration:"none"}}>In the news</Link></p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}><Link to={"/Contactpage"} style={{color:"white", textDecoration:"none"}}>Contact us</Link></p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"9%"}}><Link to={"/Loginpage"} style={{color:"white", textDecoration:"none"}}>Admin</Link></p1>
+          </div>
+          <div className='thirdly'>
+          <h1 style={{color: "white",fontSize:"19px", marginTop:"-3%", marginLeft:"1%"}}>Address</h1>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"-2%"}}>Adress: Gasabo-Kimihurura</p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"-2%"}}>Avenue: KGAV23</p1><br></br>
+          <p1 style={{color: "white", cursor: "pointer", marginLeft:"-2%"}}>Email:Newgeaneration@gmail.com</p1><br></br>
+          </div>
+
+          <div className='fourthly'>
+          <h1 style={{color: "white",fontSize:"19px", marginTop:"-1%", marginLeft:"1%"}}>Subscribe our NewsLetter</h1>
+          <input placeholder='Your full name' className='your' style={{color:"white"}} />
+          <input placeholder='Your Email' className='your' style={{color:"white"}} />
+          <br></br>
+
+           <button type="submit" className='subo'  style={{cursor:"pointer"}}>Submit</button>
+           <br></br>
+           <br></br>
+           <br></br>
+           
+          </div>
+          <div className='fifth'>
+             <button className='view'>
+              <a style={{color: "white", textDecoration: "none"}} href="https://www.google.com/maps/place/New+Generation+Academy/@-1.9556697,30.0779318,17z/data=!3m1!4b1!4m6!3m5!1s0x19dca7084cb0c413:0xe7d586d77471397c!8m2!3d-1.9556697!4d30.0801205!16s%2Fg%2F11px959qnm" target={"_blank"}>View map <CiLocationOn style={{color: "white", fontSize: "22px"}}/></a>
+               </button> 
+          </div>
+        </div>
+        <div className='footer3'>
+          <h1 style={{color:"rgb(154, 153, 153)", fontSize: "16px", marginTop: "2%"}}>Administrative office: KGAV23 Kimihurura</h1>
+          <div className='pici'></div>
+          <div>
+            <h1 style={{color: "#0193DC", marginTop: "2%", marginLeft: "1%"}}>New Generation Academy<br></br><span style={{color:"white"}}>Transformed For Community</span></h1>
+            <p1 style={{color:"rgb(154, 153, 153)", fontSize: "16px", marginTop: "2%", marginLeft: "16%", position: "absolute"}}>&copy; {2023} New Generation Academy. All Rights Reserved.created by 0799340499</p1>
+          </div>
+
+        </div>
+      </div>
     </div>
   )
 }

@@ -16,11 +16,21 @@ const Formsss = () => {
           <CardBody>
             <Form>
               <FormGroup>
-                <Label for="exampleEmail">Subject</Label>
+                <Label for="exampleEmail">Student name</Label>
                 <Input
                   id="exampleEmail"
                   name="name"
                   placeholder="Type your name"
+                  type="text"
+                />
+                
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleEmail">Subject</Label>
+                <Input
+                  id="exampleEmail"
+                  name="name"
+                  placeholder="Type your subject"
                   type="text"
                 />
                 

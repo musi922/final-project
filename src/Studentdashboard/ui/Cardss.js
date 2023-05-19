@@ -15,8 +15,12 @@ import bg1 from "../../assets/images/bg/bg1.jpg";
 import bg2 from "../../assets/images/bg/bg2.jpg";
 import bg3 from "../../assets/images/bg/bg3.jpg";
 import bg4 from "../../assets/images/bg/bg4.jpg";
+import Blogs from "../Blogs";
+import { useState, useEffect } from "react";
+import axios from 'axios';
 
 const BlogData = [
+  
   {
     image: bg1,
     title: "Science",
@@ -84,21 +88,45 @@ const BlogData = [
 ];
 
 const Cardsss = () => {
+  const[features ,setfeatures]= useState([]);
+
+
+
+
+  useEffect(() => {
+    const config = {
+      
+    };
+    axios
+      .get(
+        "https://new-generation.onrender.com/activity/getActivity",
+        config
+      )
+      .then((response) => {
+        setfeatures(response.data);
+        console.log(typeof features);
+
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div>
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-1*/}
       {/* --------------------------------------------------------------------------------*/}
-      <h5 className="mb-3">Student assignments sent</h5>
+      <h5 className="mb-3">Student assignments seen</h5>
       <Row>
-        {BlogData.map((blg, index) => (
+      {features.map((feature, index,) => (
           <Col sm="6" lg="6" xl="3" key={index}>
-            <Blog
-              image={blg.image}
-              title={blg.title}
-              subtitle={blg.subtitle}
-              text={blg.description}
-              color={blg.btnbg}
+            <Blogs
+              
+              title={feature.title}
+              text={feature.description}
+              
             />
           </Col>
         ))}

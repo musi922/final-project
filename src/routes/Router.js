@@ -7,6 +7,7 @@ import Programs from "../components/Programs/Programs.js";
 
 
 
+
 /****Layouts*****/
 const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 const FullLayouts = lazy(() => import("../Teacherdashboard/layouts/FullLayouts.js"));
@@ -24,7 +25,7 @@ const Addnewteachers = lazy(() => import("../Teacherdashboard/AddnewTeacher"));
 const Breadcrumbss = lazy(() => import("../Teacherdashboard/ui/Breadcrumbs"));
 
 /***** Pages ****/
-const FullLayoutss = lazy(() => import("../Teacherdashboard/layouts/FullLayouts"));
+const FullLayoutss = lazy(() => import("../Studentdashboard/layouts/FullLayoutss.js"));
 
 const Start = lazy(() => import("../Studentdashboard/Start.js"));
 const Aboutsss = lazy(() => import("../Studentdashboard/Aboutsss"));
@@ -37,6 +38,7 @@ const Tablesss = lazy(() => import("../Studentdashboard/ui/Tabless"));
 const Formsss = lazy(() => import("../Studentdashboard/ui/Formss"));
 const Addnewstudent = lazy(() => import("../Studentdashboard/AddnewStudent"));
 const Breadcrumbsss = lazy(() => import("../Studentdashboard/ui/Breadcrumbss"));
+const Buttonss = lazy(() => import("../Studentdashboard/ui/Buttonss.js"));
 
 /***** Pages ****/
 
@@ -44,6 +46,7 @@ const Starter = lazy(() => import("../views/Starter.js"));
 const About = lazy(() => import("../views/About.js"));
 const Alerts = lazy(() => import("../views/ui/Alerts"));
 const Badges = lazy(() => import("../views/ui/Badges"));
+const Subscribe = lazy(() => import("../views/ui/Subscrib"));
 // const Buttons = lazy(() => import("../views/ui/Buttons"));
 const Cards = lazy(() => import("../views/ui/Cards"));
 const Grid = lazy(() => import("../views/ui/Grid"));
@@ -133,6 +136,7 @@ element: <Teacherslogin/>,
       { path: "/dashboard/about", exact: true, element: <About /> },
       { path: "/dashboard/alerts", exact: true, element: <Alerts /> },
       { path: "/dashboard/badges", exact: true, element: <Badges /> },
+      { path: "/dashboard/Subscribe", exact: true, element: <Subscribe /> },
       // { path: "/dashboard/buttons", exact: true, element: <Buttons /> },
       { path: "/dashboard/cards", exact: true, element: <Cards /> },
       { path: "/dashboard/grid", exact: true, element: <Grid /> },
@@ -176,6 +180,7 @@ element: <Teacherslogin/>,
       { path: "/Studentdashboard/grids", exact: true, element: <Gridss /> },
       { path: "/Studentdashboard/tables", exact: true, element: <Tablesss /> },
       { path: "/Studentdashboard/formss", exact: true, element: <Formsss /> },
+      { path: "/Studentdashboard/Projectsform", exact: true, element: <Buttonss /> },
       { path: "/Studentdashboard/Addnewteachers", exact: true, element: <Addnewstudent /> },
       { path: "/Studentdashboard/breadcrumbss", exact: true, element: <Breadcrumbsss /> },
     ],

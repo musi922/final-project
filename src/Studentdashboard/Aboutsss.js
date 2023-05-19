@@ -16,75 +16,54 @@ const Aboutsss = () => {
       icon: user2,
     },
     {
-      title: ' william',
+      title: ' Richard',
       desc: 'Hooks are functions that let you “hook into” React state and lifecycle features from function components.',
       icon: user4,
     },
     {
-      title: ' Tresor',
+      title: ' Richard',
       desc: 'It is isomorphic authorization JavaScript library which restricts what resources a given client is allowed to access.',
       icon: user3,
     },
     {
-      title: ' Remy',
+      title: ' Richard',
       desc: 'This theme comes with built-in light & dark layouts, select as per your preference.',
       icon: user1,
     },
     {
-      title: ' Mucyo',
+      title: ' Richard',
       desc: 'Built-in customizer enables users to change their admin panel look & feel based on their preferences.',
       icon: user5,
     },
     {
-      title: ' Mugabe',
+      title: ' Richard',
       desc: 'Creative & smart well crafted apps like email, chat, todo & calender allows you to create your apps faster.',
       icon: user1,
     },
     {
-      title: ' Mugabo',
+      title: ' Richard',
       desc: 'Beautifully crafted, clean & modern designed admin theme with 5 different demos & light - dark versions.',
       icon: user2,
     },
     {
-      title: 'Prof William',
+      title: 'Richard',
       desc: 'Carefully crafted, clean, smart & easy theme navigation with collapsible option.',
       icon: user3,
     },
     {
-      title: 'Prof Richardo',
+      title: 'Richard',
       desc: 'jQuery is great JS library, But Its not a great idea to use jQuery and React in the same UI.',
       icon: user4,
     },
     {
-      title: 'Prof Dan',
+      title: 'Richard',
       desc: 'Unlimited color options allows you to set your application color as per your branding.',
       icon: user5,
     },
     {
-      title: 'Prof fred',
+      title: 'Richard',
       desc: 'To avoid winding up with a large bundle, it’s good to get ahead of the problem and use "Code Splitting".',
       icon: user3,
-    },
-    {
-      title: 'Prof fred',
-      desc: 'Its more efficient to split each routes components into a separate chunk, and only load them when the route is visited.',
-      icon:user1,
-    },
-    {
-      title: 'Prof fred',
-      desc: 'Regular updates with new demos and features is guaranteed',
-      icon: user5,
-    },
-    {
-      title: 'Prof billy',
-      desc: 'We follow the best industry code structure that all developers will be able to pick up easily and fall in love',
-      icon: user2,
-      
-    },
-    {
-      title: 'Prof Kevine',
-      desc: 'Premium customer support from the actual people who have created.',
-      icon: user1,
     },
   ];
   return (
@@ -118,7 +97,7 @@ const Aboutsss = () => {
                   
                   target="_blank"
                 >
-                  <Link to={""} style={{color:"white", textDecoration:"none"}}>Post</Link>
+                  <Link to={""} style={{color:"white", textDecoration:"none"}}>Send</Link>
                 </Button>
               </div>
             </Col>

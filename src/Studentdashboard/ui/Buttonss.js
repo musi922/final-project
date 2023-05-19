@@ -1,291 +1,97 @@
-import React, { useState } from "react";
 import {
-  Button,
-  ButtonGroup,
-  Card,
-  CardBody,
-  CardTitle,
-  Row,
-  Col,
-} from "reactstrap";
-
+  Card, Row,Col,CardTitle,CardBody,Button,Form,FormGroup,Label,Input,FormText,} from "reactstrap";
+  import { useState, useEffect } from "react";
 const Buttonss = () => {
-  const [cSelected, setCSelected] = useState([]);
-  const [rSelected, setRSelected] = useState(null);
+  const [title, setTittle] = useState("");
+    const [Video, setVideo] = useState("");
+    const [studentName, setStudentName] = useState("");
+    const [schoolId, setSchoolId] = useState("");
+    const [Level, setLevel] = useState("");
+    const [approved, setapproved] = useState("");
 
-  const onRadioBtnClick = (rSelected) => {
-    setRSelected(rSelected);
-  };
+  const handleAddBlog = (e) => {
+    e.preventDefault();
+    const data = {
+      title,
+      
+      Video,
+     
+    };
+    onSendPost(data);
+};
 
-  const onCheckboxBtnClick = (selected) => {
-    const index = cSelected.indexOf(selected);
-    if (index < 0) {
-      cSelected.push(selected);
-    } else {
-      cSelected.splice(index, 1);
-    }
-    setCSelected([...cSelected]);
-  };
+function onSendPost(data) {
+    let formData = new FormData();
+    Object.keys(data).forEach(function (key) {
+        formData.append(key, data[key]);
+    });
 
+    fetch("https://new-generation.onrender.com/Project/CreateProject", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MjZjYTNlMDhmYjBmOTFjN2U2MTE3NiIsImZpcnN0TmFtZSI6IkJpa29yaW1hbmEiLCJsYXN0TmFtZSI6IlNhdXZ1ZXIiLCJlbWFpbCI6IkJpa29yYVNhdXZ1ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkTHRoMzh2SkxveFduVURMYmpISll4ZXEycU5vWkhOTFlGNUtHRXZuR1BoYW1YRzRnM3pEL20iLCJkYXRlT2ZCaXJ0aCI6IjEwLjEwLjEwIiwibGV2ZWwiOiJQcmltYXJ5MSIsInNjaG9vbElkIjoiMjMyNDIiLCJpbWFnZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RheGV5bXF2di9pbWFnZS91cGxvYWQvdjE2ODAyNjM3NDEvYzhucGR4ZXZoZ3U3aTRtbGYydTguanBnIiwicm9sZSI6InN0dWRlbnQiLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTMxVDExOjU1OjQyLjk0OFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAzLTMxVDExOjU1OjQyLjk0OFoiLCJfX3YiOjB9LCJpYXQiOjE2ODA1Mzk4MTN9.um8dLyTBwOVMC_8f-rnhmr54Xbv2hsQmg-180itmAx4`}
+    })
+    .then((result) => result.json())
+    .then((result) => {
+        console.log(result);
+        alert("really do you want to send these video ")
+        // navigate("/Dashboard/MyListings")
+    });
+}
   return (
-    <div>
-      {/* --------------------------------------------------------------------------------*/}
-      {/* Start Inner Div*/}
-      {/* --------------------------------------------------------------------------------*/}
-      {/* --------------------------------------------------------------------------------*/}
-      {/* Row*/}
-      {/* --------------------------------------------------------------------------------*/}
-      <Row>
-        <Col xs="12" md="6">
-          {/* --------------------------------------------------------------------------------*/}
-          {/* Card-1*/}
-          {/* --------------------------------------------------------------------------------*/}
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              Buttons
-            </CardTitle>
-            <CardBody className="">
-              <div className="button-group">
-                <Button className="btn" color="primary">
-                  primary
-                </Button>
-                <Button className="btn" color="secondary">
-                  secondary
-                </Button>
-                <Button className="btn" color="success">
-                  success
-                </Button>
-                <Button className="btn" color="info">
-                  info
-                </Button>
-                <Button className="btn" color="warning">
-                  warning
-                </Button>
-                <Button className="btn" color="danger">
-                  danger
-                </Button>
-                <Button className="btn" color="link">
-                  link
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="6">
-          {/* --------------------------------------------------------------------------------*/}
-          {/* Card-2*/}
-          {/* --------------------------------------------------------------------------------*/}
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              Outline Buttons
-            </CardTitle>
-            <CardBody className="">
-              <div className="button-group">
-                <Button className="btn" outline color="primary">
-                  primary
-                </Button>
-                <Button className="btn" outline color="secondary">
-                  secondary
-                </Button>
-                <Button className="btn" outline color="success">
-                  success
-                </Button>
-                <Button className="btn" outline color="info">
-                  info
-                </Button>
-                <Button className="btn" outline color="warning">
-                  warning
-                </Button>
-                <Button className="btn" outline color="danger">
-                  danger
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="6">
-          {/* --------------------------------------------------------------------------------*/}
-          {/* Card-3*/}
-          {/* --------------------------------------------------------------------------------*/}
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              Large Size Buttons
-            </CardTitle>
-            <CardBody className="">
-              <div className="button-group">
-                <Button className="btn" color="primary" size="lg">
-                  Large Button
-                </Button>
-                <Button className="btn" color="secondary" size="lg">
-                  Large Button
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="6">
-          {/* --------------------------------------------------------------------------------*/}
-          {/* Card-4*/}
-          {/* --------------------------------------------------------------------------------*/}
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              Small Size Buttons
-            </CardTitle>
-            <CardBody className="">
-              <div className="button-group">
-                <Button className="btn" color="primary" size="sm">
-                  Small Button
-                </Button>
-                <Button className="btn" color="secondary" size="sm">
-                  Small Button
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="6">
-          {/* --------------------------------------------------------------------------------*/}
-          {/* Card-6*/}
-          {/* --------------------------------------------------------------------------------*/}
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              Active State Buttons
-            </CardTitle>
-            <CardBody className="">
-              <div className="button-group">
-                <Button className="btn" color="primary" size="lg" active>
-                  Primary link
-                </Button>
-                <Button className="btn" color="secondary" size="lg" active>
-                  Link
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="6">
-          {/* --------------------------------------------------------------------------------*/}
-          {/* Card-7*/}
-          {/* --------------------------------------------------------------------------------*/}
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              Disabled State Buttons
-            </CardTitle>
-            <CardBody className="">
-              <div className="button-group">
-                <Button className="btn" color="primary" size="lg" disabled>
-                  Primary button
-                </Button>
-                <Button className="btn" color="secondary" size="lg" disabled>
-                  Button
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="6">
-          {/* --------------------------------------------------------------------------------*/}
-          {/* Card-5*/}
-          {/* --------------------------------------------------------------------------------*/}
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              Block Buttons
-            </CardTitle>
-            <CardBody className="">
-              <div className="button-group">
-                <Button className="btn" color="primary" size="lg" block>
-                  Block level button
-                </Button>
-                <Button className="btn" color="secondary" size="lg" block>
-                  Block level button
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="6">
-          {/* --------------------------------------------------------------------------------*/}
-          {/* Card-6*/}
-          {/* --------------------------------------------------------------------------------*/}
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              Checkbox(Stateful Buttons)
-            </CardTitle>
-            <CardBody className="">
-              <h5>Checkbox Buttons</h5>
-              <ButtonGroup>
-                <Button
-                  color="primary"
-                  onClick={() => onCheckboxBtnClick(1)}
-                  active={cSelected.includes(1)}
+    <Row>
+      <Col>
+        {/* --------------------------------------------------------------------------------*/}
+        {/* Card-1*/}
+        {/* --------------------------------------------------------------------------------*/}
+        <Card>
+          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+            <i className="bi bi-bell me-2"> </i>
+            Fill out The form
+          </CardTitle>
+          <CardBody>
+            <Form>
+            
+              <FormGroup>
+                <Label for="examplePassword">Project Link</Label>
+                <Input
+                  id="examplePassword"
+                  name="number"
+                  placeholder="Paste your Link"
+                  type="text"
+                  onChange={(e)=> setVideo(e.target.value)}
+                />
+              </FormGroup>
+              {/* <FormGroup>
+                <Label for="exampleSelectMulti">Select Multiple</Label>
+                <Input
+                  id="exampleSelectMulti"
+                  multiple
+                  name="selectMulti"
+                  type="select"
                 >
-                  One
-                </Button>
-                <Button
-                  color="primary"
-                  onClick={() => onCheckboxBtnClick(2)}
-                  active={cSelected.includes(2)}
-                >
-                  Two
-                </Button>
-                <Button
-                  color="primary"
-                  onClick={() => onCheckboxBtnClick(3)}
-                  active={cSelected.includes(3)}
-                >
-                  Three
-                </Button>
-              </ButtonGroup>
-              <p className="mb-0">Selected: {JSON.stringify(cSelected)}</p>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="6">
-          {/* --------------------------------------------------------------------------------*/}
-          {/* Card-6*/}
-          {/* --------------------------------------------------------------------------------*/}
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              Radio Buttons (Stateful Buttons)
-            </CardTitle>
-            <CardBody className="">
-              <h5>Radio Buttons</h5>
-              <ButtonGroup>
-                <Button
-                  color="primary"
-                  onClick={() => onRadioBtnClick(1)}
-                  active={rSelected === 1}
-                >
-                  One
-                </Button>
-                <Button
-                  color="primary"
-                  onClick={() => onRadioBtnClick(2)}
-                  active={rSelected === 2}
-                >
-                  Two
-                </Button>
-                <Button
-                  color="primary"
-                  onClick={() => onRadioBtnClick(3)}
-                  active={rSelected === 3}
-                >
-                  Three
-                </Button>
-              </ButtonGroup>
-              <p className="mb-0">Selected: {rSelected}</p>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-      {/* --------------------------------------------------------------------------------*/}
-      {/* Row*/}
-      {/* --------------------------------------------------------------------------------*/}
-
-      {/* --------------------------------------------------------------------------------*/}
-      {/* End Inner Div*/}
-      {/* --------------------------------------------------------------------------------*/}
-    </div>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </Input>
+              </FormGroup> */}
+              <FormGroup>
+                <Label for="exampleText">Project title</Label>
+                <Input id="exampleText" name="text" type="text"  onChange={(e)=> setTittle(e.target.value)}/>
+              </FormGroup>
+             
+              <FormGroup check>
+                <Input type="checkbox" /> <Label check>Submit any way</Label>
+              </FormGroup>
+              <Button onClick={(e) => handleAddBlog(e)}>Submit</Button>
+            </Form>
+          </CardBody>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

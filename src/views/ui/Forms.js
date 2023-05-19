@@ -13,10 +13,7 @@ const Formss = () => {
     e.preventDefault();
     const data = {
       title,
-      studentName,
-      schoolId,
-      Level,
-      approved,
+      
       Video,
      
     };
@@ -33,13 +30,14 @@ function onSendPost(data) {
         method: "POST",
         body: formData,
         headers: {
-          Authorization:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MjI3YTRjMjE2ZmE1NzU0Nzc5YTlkYSIsImZpcnN0TmFtZSI6IkRvZSIsImxhc3ROYW1lIjoiTGVzbGllIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRwcnB5bFUydU96bnFTelB5OG9obDZlcldDUVR5RC41WVZwYzkvZXNuT1BTWjlXS0xIYXBaSyIsImRhdGVPZkJpcnRoIjoic3RyaW5nIiwibGV2ZWwiOiJzdHJpbmciLCJzY2hvb2xJZCI6InN0cmluZyIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDU6MjU6MzIuMDkxWiIsIl9fdiI6MH0sImlhdCI6MTY4MDAwNTUyNH0.xYncUT_FqiR6iNbkifSAKHIbFB0GoxuAvDRxoyfg0z0`}
+          Authorization:`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MjZjYTNlMDhmYjBmOTFjN2U2MTE3NiIsImZpcnN0TmFtZSI6IkJpa29yaW1hbmEiLCJsYXN0TmFtZSI6IlNhdXZ1ZXIiLCJlbWFpbCI6IkJpa29yYVNhdXZ1ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkTHRoMzh2SkxveFduVURMYmpISll4ZXEycU5vWkhOTFlGNUtHRXZuR1BoYW1YRzRnM3pEL20iLCJkYXRlT2ZCaXJ0aCI6IjEwLjEwLjEwIiwibGV2ZWwiOiJQcmltYXJ5MSIsInNjaG9vbElkIjoiMjMyNDIiLCJpbWFnZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RheGV5bXF2di9pbWFnZS91cGxvYWQvdjE2ODAyNjM3NDEvYzhucGR4ZXZoZ3U3aTRtbGYydTguanBnIiwicm9sZSI6InN0dWRlbnQiLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTMxVDExOjU1OjQyLjk0OFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAzLTMxVDExOjU1OjQyLjk0OFoiLCJfX3YiOjB9LCJpYXQiOjE2ODA0NDA2OTF9.Z6tdKgI4es8rwtIQ45YUH_uPL1RFuFcSG97UHsfhUDM`}
     })
     .then((result) => result.json())
     .then((result) => {
         console.log(result);
         alert("really do you want to post to these video ")
         // navigate("/Dashboard/MyListings")
+        localStorage.setItem("token", result.token);
     });
 }
   return (
@@ -55,51 +53,7 @@ function onSendPost(data) {
           </CardTitle>
           <CardBody>
             <Form>
-             
-           
-              <FormGroup>
-                <Label for="exampleEmail">Student name</Label>
-                <Input
-                  id="exampleEmail"
-                  name="name"
-                  placeholder="Type your name"
-                  onChange={(e)=> setStudentName(e.target.value)}
-                  type="text"
-                />
-                
-              </FormGroup>
-              <FormGroup>
-                <Label for="examplePassword">Student numberor Id</Label>
-                <Input
-                  id="examplePassword"
-                  name="number"
-                  placeholder="Type only your number"
-                  type="number"
-                  onChange={(e)=> setSchoolId(e.target.value)}
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label for="exampleSelect">Select Class</Label>
-                <Input id="exampleSelect" name="select" type="select">
-                  <option>Nursery</option>
-                  <option>primary 1</option>
-                  <option>primary 2</option>
-                  <option>primary 3</option>
-                  <option>primary 4</option>
-                  <option>primary 5</option>
-                  <option>primary 6</option>
-                  onChange={(e)=> setLevel(e.target.value)}
-                </Input>
-              </FormGroup>
-              <FormGroup>
-                <Label for="exampleSelect">Select Approval</Label>
-                <Input id="exampleSelect" name="select" type="select">
-                  <option>false</option>
-                  <option>true</option>
-                  onChange={(e)=> setapproved(e.target.value)}
-                  
-                </Input>
-              </FormGroup>
+            
               <FormGroup>
                 <Label for="examplePassword">Project Link</Label>
                 <Input
